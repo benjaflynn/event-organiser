@@ -1,4 +1,6 @@
 import { useFormik } from 'formik';
+import { useContext } from 'react';
+import { RegisterContext } from '../RegisterContext';
 
 const validate = values => {
     const errors = {};
@@ -16,7 +18,9 @@ const validate = values => {
     }
 }
 
-export default function LoginArea() {
+export default function LoginArea({ loginData, setLoginData, userCheck }) {
+
+    const { userData, setUserData } = useContext(RegisterContext);
 
     const formik = useFormik({
         initialValues: {
@@ -28,7 +32,8 @@ export default function LoginArea() {
 
         onSubmit: values => {
             console.log(values);
-            window.alert('Login successful!');
+            setLoginData(values);
+            userCheck(userData, values);
         }
     });
 
@@ -51,7 +56,7 @@ export default function LoginArea() {
             <input
                 id='password'
                 name='password'
-                type='text'
+                type='password'
                 onChange={formik.handleChange}
                 value={formik.values.password}
             />
