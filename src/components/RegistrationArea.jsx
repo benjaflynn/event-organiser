@@ -1,4 +1,7 @@
 import { useFormik } from 'formik';
+import { useNavigate } from 'react-router-dom';
+import { useContext } from 'react';
+import { RegisterContext } from '../RegisterContext';
 
 const validate = values => {
 
@@ -32,9 +35,8 @@ const validate = values => {
 
     if (!values.password) {
         errors.password = 'Required field!';
-    } else if (!/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/.test(values.password) ) {
+    } else if (!/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%#*?&])[A-Za-z\d@$!%#*?&]{8,}$/.test(values.password) ) {
         errors.password = 'Please use at least one upper-case letter, one lower-case letter, one number, and a special character.';
-        console.log(password)
     }
 
     if (!values.password2) {
@@ -47,6 +49,10 @@ const validate = values => {
 }
 
 function RegistrationArea() {
+    
+    const nav = useNavigate();
+    
+    const { userData, setUserData } = useContext(RegisterContext);
 
     const formik = useFormik({
         initialValues: {
@@ -63,8 +69,15 @@ function RegistrationArea() {
         onSubmit: values => {
             window.alert('Thank you for registering!');
             console.log(values);
+            setUserData(values);
+            
+            function returnHome() {
+                nav ('/')
+            }
+
+            returnHome();
         }
-    })
+    });
 
     return(
         <div>
@@ -146,6 +159,7 @@ function RegistrationArea() {
                     <button type='submit'>Submit</button>
                 </form>
             </div>
+            <p><button onClick={() => nav (`/`)}>Home</button></p>
         </div>
     )
 };
