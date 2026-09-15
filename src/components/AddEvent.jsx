@@ -1,10 +1,21 @@
 import NavBar from '../routes/NavBar';
+import { useState } from 'react';
+import NewEventAdder from './NewEventAdder';
+import NewEventDisplayer from './NewEventDisplayer';
 
 export default function AddEvent() {
-    return (
+
+    const [newEvent, setNewEvent] = useState('');
+
+    const eventArray = [];
+
+    return(
         <div>
             <NavBar />
-            <h1>Add an event here!</h1>
+            
+            {
+                newEvent === '' ? <div><div><h1>Add an event here!</h1></div><div><NewEventAdder eventArray={eventArray} setNewEvent={setNewEvent}/></div></div> : <div><NewEventDisplayer setNewEvent={setNewEvent} newEvent={newEvent}/></div>
+            }
         </div>
     );
 }
