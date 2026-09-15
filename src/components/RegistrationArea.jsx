@@ -150,4 +150,4 @@ function RegistrationArea() {
     )
 };
 
-export default RegisterMe;
+export default RegistrationArea;
