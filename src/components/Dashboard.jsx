@@ -1,19 +1,24 @@
 import NavBar from '../routes/NavBar';
-import LoginPage from './LoginArea.jsx';
+import LoginArea from './LoginArea.jsx';
 import { useContext, useState } from 'react';
-import { RegisterContext } from '../RegisterContext';
+import { LoginContext } from '../LoginContext';
 import { useNavigate } from 'react-router-dom';
-import EventDisplayer from './EventDisplayer.jsx'
+import EventDisplayer from './EventDisplayer.jsx';
+import { EventContext } from '../EventContext';
+import RegistrationArea from './RegistrationArea.jsx';
+
 
 export default function Dashboard() {
 
-    const nav = useNavigate();
+    const navAdd = useNavigate();
 
-    const { userData, setUserData } = useContext(RegisterContext);
+    const [userData, setUserData] = useState('');
 
     const [loginData, setLoginData] = useState('');
 
-    const [isLoggedIn, setIsLoggedIn] = useState('false');
+    const { isLoggedIn, setIsLoggedIn } = useContext(LoginContext)
+
+    const { eventArray, setEventArray } = useContext(EventContext);
 
     const loginProblem = '';
 
@@ -37,17 +42,20 @@ export default function Dashboard() {
         return (
             <div>
                 <NavBar />
-                <div>Welcome to your dashboard!</div> 
-                <EventDisplayer />
+                <div>Welcome to your dashboard!</div>
+                {
+                    eventArray  ? <EventDisplayer /> : <button onClick={() => navAdd (`/add-event`)}>Click me!</button>
+                }
+                <div><button onClick={() => setIsLoggedIn('false')}>Logout</button></div>
             </div>
         )
     } else {
         return (
             <div>
                 <NavBar />
-                <LoginPage setLoginData={setLoginData} userCheck={userCheck} />
+                <LoginArea setLoginData={setLoginData} userCheck={userCheck} userData={userData}/>
                 <p>{loginProblem}</p>
-                <p>Don't have an account yet? <button onClick={() => nav (`/register-me`)}>Register here!</button></p>
+                <p>Don't have an account yet? <RegistrationArea setUserData={setUserData}/></p>
             </div>
         )        
     }

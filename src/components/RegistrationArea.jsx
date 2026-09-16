@@ -1,7 +1,4 @@
 import { useFormik } from 'formik';
-import { useNavigate } from 'react-router-dom';
-import { useContext } from 'react';
-import { RegisterContext } from '../RegisterContext';
 
 const validate = values => {
 
@@ -48,11 +45,7 @@ const validate = values => {
     return errors;
 }
 
-function RegistrationArea() {
-    
-    const nav = useNavigate();
-    
-    const { userData, setUserData } = useContext(RegisterContext);
+function RegistrationArea({ setUserData }) {
 
     const formik = useFormik({
         initialValues: {
@@ -81,7 +74,6 @@ function RegistrationArea() {
 
     return(
         <div>
-            
             <div id='registerFormBox'>
                 <form id='registerForm' onSubmit={formik.handleSubmit}>
                     <label htmlFor='firstname'>First name</label>
@@ -159,7 +151,6 @@ function RegistrationArea() {
                     <button type='submit'>Submit</button>
                 </form>
             </div>
-            <p><button onClick={() => nav (`/`)}>Home</button></p>
         </div>
     )
 };

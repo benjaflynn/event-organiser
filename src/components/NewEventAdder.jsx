@@ -1,4 +1,6 @@
 import { useFormik } from 'formik';
+import { useContext } from 'react';
+import { EventContext } from '../EventContext';
 
 {/**displays the form to add a new event, containing options for title, date, time, description, location, and a submit button. uses formik to validate the input. */}
 
@@ -24,9 +26,11 @@ const validate = values => {
     if (!values.location) {
         errors.location = 'Required field!'
     }
-}
+}  
 
-export default function AddEvent({ setNewEvent, eventArray }) {
+export default function AddEvent({ setNewEvent }) {
+
+    const { eventArray, setEventArray } = useContext(EventContext);
 
     const formik = useFormik({
         initialValues: {
@@ -42,8 +46,7 @@ export default function AddEvent({ setNewEvent, eventArray }) {
         onSubmit: values => {
             console.log(JSON.stringify(values, null, 2));
             setNewEvent(values);
-            eventArray.push(values);
-            console.log(eventArray);
+            setEventArray([...eventArray, values]);
         },
     });
 

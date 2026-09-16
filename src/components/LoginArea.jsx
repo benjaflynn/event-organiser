@@ -1,6 +1,4 @@
 import { useFormik } from 'formik';
-import { useContext } from 'react';
-import { RegisterContext } from '../RegisterContext';
 
 const validate = values => {
     const errors = {};
@@ -18,9 +16,7 @@ const validate = values => {
     }
 }
 
-export default function LoginArea({ loginData, setLoginData, userCheck }) {
-
-    const { userData, setUserData } = useContext(RegisterContext);
+export default function LoginArea({ userData, setLoginData, userCheck }) {
 
     const formik = useFormik({
         initialValues: {

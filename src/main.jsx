@@ -9,7 +9,8 @@ import AddEvent from './components/AddEvent.jsx';
 import Help from './components/Help.jsx';
 import RegistrationArea from './components/RegistrationArea.jsx';
 
-import { RegisterProvider } from './RegisterContext.jsx';
+import { LoginProvider } from './LoginContext.jsx';
+import { EventProvider } from './EventContext.jsx';
 
 const router = createBrowserRouter([
   {
@@ -32,8 +33,10 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <RegisterProvider>
-      <RouterProvider router={router} />
-    </RegisterProvider>
+    <LoginProvider>
+      <EventProvider>
+        <RouterProvider router={router} />
+      </EventProvider>
+    </LoginProvider>
   </StrictMode>,
 )
