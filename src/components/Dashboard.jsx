@@ -54,8 +54,8 @@ export default function Dashboard() {
             <div>
                 <NavBar />
                 <LoginArea setLoginData={setLoginData} userCheck={userCheck} userData={userData}/>
-                <p>{loginProblem}</p>
-                <p>Don't have an account yet? <RegistrationArea setUserData={setUserData}/></p>
+                <span>{loginProblem}</span>
+                <div>Don't have an account yet? <RegistrationArea setUserData={setUserData}/></div>
             </div>
         )        
     }
