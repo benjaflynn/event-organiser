@@ -7,14 +7,11 @@ export default function AddEvent() {
 
     const [newEvent, setNewEvent] = useState('');
 
-    const eventArray = [];
-
     return(
         <div>
             <NavBar />
-            
             {
-                newEvent === '' ? <div><div><h1>Add an event here!</h1></div><div><NewEventAdder eventArray={eventArray} setNewEvent={setNewEvent}/></div></div> : <div><NewEventDisplayer setNewEvent={setNewEvent} newEvent={newEvent}/></div>
+                newEvent === '' ? <div><div><h1>Add an event here!</h1></div><div><NewEventAdder setNewEvent={setNewEvent}/></div></div> : <div><NewEventDisplayer setNewEvent={setNewEvent} newEvent={newEvent}/></div>
             }
         </div>
     );
