@@ -1,4 +1,8 @@
+import { useNavigate } from "react-router-dom";
+
 export default function NewEventDisplayer({ newEvent, setNewEvent }) {
+
+    const nav = useNavigate();
 
     return (
         <div>
@@ -13,7 +17,9 @@ export default function NewEventDisplayer({ newEvent, setNewEvent }) {
                 </ul>
             </div>
             <br />
-            <p><button onClick={() => {setNewEvent('')}}>Add another event?</button></p>
+            <p><button onClick={() => {setNewEvent('')}}>Add another event?</button>
+            <br />
+            <button onClick={() => navAdd (`/`)}>View all events!</button></p>
         </div>
     );
 
