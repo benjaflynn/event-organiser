@@ -26,7 +26,7 @@ const validate = values => {
     if (!values.location) {
         errors.location = 'Required field!'
     }
-}  
+};
 
 export default function AddEvent({ setNewEvent }) {
 
