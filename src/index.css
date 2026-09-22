@@ -21,6 +21,7 @@ body {
   justify-content: space-between;
   align-items: center;
   background-color: rgba(39, 87, 136, 0.404);
+  padding-bottom: 15px;
 }
 
 .nav-link-group {
@@ -69,6 +70,39 @@ p {
   margin-left: -2.5em;
 }
 
+.event-card-row {
+  display: flex;
+  justify-content: space-around;
+  padding-left: 20%;
+  padding-right: 20%;
+}
+
+.event-cards {
+  margin-bottom: 10px;
+  border: 2px solid rgba(39, 87, 136, 0.404);
+}
+
+.card-btns {
+  width: 50%;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+#new-event-display {
+  padding-top: 5rem;
+  width: 50%;
+  margin: auto;
+}
+
+table {
+  text-align: left;
+  width: 50%;
+  margin: 3rem auto auto auto;
+  font-size: 18px;
+}
+
 #accordion-container {
   width: 80%;
   margin: auto;
@@ -99,6 +133,22 @@ input {
   margin-top: 1em;
 }
 
+#dropdown-basic {
+  width: 80px;
+}
+
 .errors {
   color: red;
+}
+
+li {
+  border-bottom: 2px solid transparent;
+}
+
+li:hover {
+  border-bottom-color: black;
+}
+
+#logout-btn {
+  margin-top: 20px;
 }

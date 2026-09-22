@@ -49,15 +49,18 @@ export default function EventCard({ date, time, title, description, location, ev
     });
 
     return (
-        <Card>
-            <Card.Header>{date} at {time}</Card.Header>
+        <Card className='event-cards' border='dark'>
+            <Card.Header as="h5">{date} at {time}</Card.Header>
             <Card.Body>
                 <Card.Title>{title} at {location}</Card.Title>
                 <Card.Text>
                 {description}
                 </Card.Text>
-                <Button variant='success' onClick={() => document.getElementById(idMaker).style.display = "block"}>Edit</Button>
-                <Button variant='danger' onClick={(e) => eventDeleter(e)}>Delete</Button>
+                <div className='card-btns'>
+                    <Button variant='success' onClick={() => document.getElementById(idMaker).style.display = "block"}>Edit</Button>
+                    <Button variant='danger' onClick={(e) => eventDeleter(e)}>Delete</Button>
+                </div>
+                
             </Card.Body>
 
             <div style={{display: "none"}} id={idMaker}>
