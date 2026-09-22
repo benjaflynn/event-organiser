@@ -32,6 +32,9 @@ body {
   padding-left: 10rem;
   font-size: 30px;
   column-gap: 30px;
+  @media (max-width: 750px) {
+    padding-left: 1rem;
+  }
 }
 
 h1,
