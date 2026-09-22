@@ -1,6 +1,10 @@
 import { useFormik } from 'formik';
 import Button from 'react-bootstrap/Button';
 
+{/**form to allow the user to log in. form input is validataed through formik. upon submission the data is stored as the new login data and the function checking whether
+    the registered data matches the login data is called.
+*/}
+
 const validate = values => {
     const errors = {};
 
@@ -66,5 +70,5 @@ export default function LoginArea({ userData, setLoginData, userCheck }) {
             <br />
             <Button type='submit' variant='success' className='submit-btn'>Submit</Button>
         </form>
-    )
+    );
 }

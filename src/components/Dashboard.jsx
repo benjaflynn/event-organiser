@@ -9,6 +9,13 @@ import RegistrationArea from './RegistrationArea.jsx';
 import Button from 'react-bootstrap/Button';
 import { RegisterContext } from '../RegisterContext.jsx';
 
+{/**this is the main component.
+    its two main states are if the user is logged in or not.
+    if yes, the user is shown the navigation bar, a greeting, and either existing events (if any exist in the eventArray), or a button to create events. there is then also a logout button, which sets the login state to false and therefore logs the user back out.
+    if no, the user is shown the login area requesting an email and password through the LoginArea component.
+    also, if no registration information is stored within RegisterContext, the registration form is shown; otherwise the DOM remains empty in that area.
+    as the nav bar is only available to logged in users, the RegistrationArea component has its own help section; a new user can't not come across it as they have to register before they can even login.
+*/}
 
 export default function Dashboard() {
 
@@ -42,7 +49,8 @@ export default function Dashboard() {
                     <p><Button id='logout-btn' variant='danger' onClick={() => setIsLoggedIn(false)}>Logout</Button></p>
                 </div>
             </div>
-        )
+        );
+
     } else {
         return (
             <>
@@ -58,6 +66,6 @@ export default function Dashboard() {
                 </div>
                 
             </>
-        )        
+        );
     }
 }

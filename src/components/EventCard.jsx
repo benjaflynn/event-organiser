@@ -2,6 +2,12 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { useFormik } from 'formik';
 
+{/**this component is reused to display each individual event using a bootstrap card. it also contains a form whose visibility is toggled by the edit button;
+    if toggled to be visible, the form is prefilled with that event's information, allowing the user to review and potentially edit the information.
+    the form is validated through formik, with dates only allowed to be set between jan 01, 1970, and dec 31, 2070, as a reasonable time limit. 
+    upon submission, the input is passed back to the parent component to change the DOM; also the edit form is removed from visibility.
+*/}
+
 const validate = values => {
     const errors = {};
 
@@ -42,7 +48,6 @@ export default function EventCard({ date, time, title, description, location, ev
         validate,
 
         onSubmit: values => {
-            console.log(JSON.stringify(values, null, 2));
             eventEditor(values, title);
             document.getElementById(idMaker).style.display = "none";
         },

@@ -1,6 +1,11 @@
 import { useFormik } from 'formik';
 import Button from 'react-bootstrap/Button';
 
+{/**form to register a new user. uses formik for form validation, with different regex's passed to the input fields.
+    also contains a help area accessible by a button underneath the registration form.
+    upon submitting the form the data is passed back to the parent component, Dashboard.jsx, to be stored in state.
+*/}
+
 const validate = values => {
 
     const errors = {};
@@ -198,7 +203,7 @@ function RegistrationArea({ setUserData }) {
             <Button variant='secondary' className='registration-help-btns' id='help-btn' onClick={helpFN} style={{ display: 'block' }}>Help, I don't know what I'm doing!</Button>
             <Button variant='secondary' className='registration-help-btns' id='unhelp-btn' onClick={unhelpFN} style={{ display: 'none' }}>Okay, I understand now!</Button>
         </>
-    )
-};
+    );
+}
 
 export default RegistrationArea;
