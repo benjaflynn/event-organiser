@@ -1,6 +1,8 @@
 import NavBar from '../routes/NavBar';
 import Accordion from 'react-bootstrap/Accordion';
 
+{/**help page, accessible through the nav bar, with explanations on how to use the app displayed with an accordion.*/}
+
 export default function Help() {
     return (
         <div>

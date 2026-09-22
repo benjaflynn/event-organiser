@@ -3,7 +3,10 @@ import { useContext } from 'react';
 import { EventContext } from '../EventContext';
 import Button from 'react-bootstrap/Button';
 
-{/**displays the form to add a new event, containing options for title, date, time, description, location, and a submit button. uses formik to validate the input. */}
+{/**displays the form to add a new event, containing options for title, date, time, description, location, and a submit button. uses formik to validate the input,
+    with dates only allowed to be set between jan 01, 1970, and dec 31, 2070, as a reasonable time limit. 
+    on submission the new event is added to the overarching event array, and stored as the newest event to then be displayed.
+*/}
 
 const validate = values => {
     const errors = {};

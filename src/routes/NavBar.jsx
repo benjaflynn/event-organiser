@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom';
 
+{/**creates navbar for easier overview and navigation*/}
+
 export default function NavBar() {
     return (
         <div className='navbar'>
