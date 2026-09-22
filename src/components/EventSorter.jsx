@@ -35,7 +35,7 @@ export default function EventSorter() {
 
     return (
         <Dropdown>
-            <Dropdown.Toggle variant="success" id="dropdown-basic">
+            <Dropdown.Toggle variant='light' id='dropdown-basic'>
                 Sort
             </Dropdown.Toggle>
 

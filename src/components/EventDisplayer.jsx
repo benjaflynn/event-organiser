@@ -35,9 +35,10 @@ export default function EventDisplayer() {
     return (
         <Container>
             <EventSorter />
+            <br />
             <Col>
             {eventArray.map(event => {
-                return <Row key={event.title} id={event.title}><EventCard title={event.title} date={event.date} time={event.time} description={event.description} location={event.location} eventEditBtn={eventEditBtn} eventEditor={eventEditor} eventDeleter={eventDeleter} /></Row>})}
+                return <Row key={event.title} id={event.title} className='event-card-row'><EventCard title={event.title} date={event.date} time={event.time} description={event.description} location={event.location} eventEditBtn={eventEditBtn} eventEditor={eventEditor} eventDeleter={eventDeleter} /></Row>})}
             </Col>
         </Container>
     )
