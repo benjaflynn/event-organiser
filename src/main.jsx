@@ -7,10 +7,10 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Dashboard from './components/Dashboard.jsx';
 import AddEvent from './components/AddEvent.jsx';
 import Help from './components/Help.jsx';
-import RegistrationArea from './components/RegistrationArea.jsx';
 
 import { LoginProvider } from './LoginContext.jsx';
 import { EventProvider } from './EventContext.jsx';
+import { RegisterProvider } from './RegisterContext.jsx';
 
 const router = createBrowserRouter([
   {
@@ -25,18 +25,16 @@ const router = createBrowserRouter([
     path: "/help",
     element: <Help />
   },
-  {
-    path: "/register-me",
-    element: <RegistrationArea />
-  }
 ])
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <LoginProvider>
-      <EventProvider>
-        <RouterProvider router={router} />
-      </EventProvider>
-    </LoginProvider>
+    <RegisterProvider>
+      <LoginProvider>
+        <EventProvider>
+          <RouterProvider router={router} />
+        </EventProvider>
+      </LoginProvider>
+    </RegisterProvider>
   </StrictMode>
 )

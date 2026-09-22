@@ -68,7 +68,6 @@ function RegistrationArea({ setUserData }) {
 
         onSubmit: values => {
             window.alert('Thank you for registering!');
-            console.log(values);
             setUserData(values);
         }
     });

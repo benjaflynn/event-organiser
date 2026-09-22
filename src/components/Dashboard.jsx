@@ -7,13 +7,14 @@ import EventDisplayer from './EventDisplayer.jsx';
 import { EventContext } from '../EventContext';
 import RegistrationArea from './RegistrationArea.jsx';
 import Button from 'react-bootstrap/Button';
+import { RegisterContext } from '../RegisterContext.jsx';
 
 
 export default function Dashboard() {
 
     const navAdd = useNavigate();
 
-    const [userData, setUserData] = useState('');
+    const { userData, setUserData } = useContext(RegisterContext);
 
     const [loginData, setLoginData] = useState('');
 
@@ -23,11 +24,11 @@ export default function Dashboard() {
 
     function userCheck(userData, loginData) {
         if (loginData.email === userData.email && loginData.password === userData.password) {
-            setIsLoggedIn('true');
+            setIsLoggedIn(current => !current);
         }
     }
 
-    if (isLoggedIn === 'true') {
+    if (isLoggedIn === true) {
         return (
             <div>
                 <NavBar />
@@ -38,7 +39,7 @@ export default function Dashboard() {
                         eventArray ? <EventDisplayer /> : <><span><h4>No events yet...</h4></span><br/><Button variant='success' onClick={() => navAdd (`/add-event`)}><h5>Add an event?</h5></Button><br /></>
                     }
                     <br />
-                    <p><Button id='logout-btn' variant='danger' onClick={() => setIsLoggedIn('false')}>Logout</Button></p>
+                    <p><Button id='logout-btn' variant='danger' onClick={() => setIsLoggedIn(false)}>Logout</Button></p>
                 </div>
             </div>
         )
