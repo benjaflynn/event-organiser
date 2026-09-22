@@ -74,6 +74,8 @@ export default function AddEvent({ setNewEvent }) {
                         id='date'
                         name='date'
                         type='date'
+                        min='1970-01-01'
+                        max='2070-12-31'
                         onChange={formik.handleChange}
                         onBlur={formik.handleBlur}
                         value={formik.values.date}
