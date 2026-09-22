@@ -24,17 +24,14 @@ export default function Dashboard() {
 
     function userCheck(userData, loginData) {
         if (loginData.email === userData.email && loginData.password === userData.password) {
-            console.log("logged in!");
+            window.alert('Login successful!')
             setIsLoggedIn('true');
         } else if (loginData.email != userData.email && loginData.password === userData.password) {
             console.log("wrong email!");
-            loginProblem += "No user with this email address."
         } else if (loginData.email === userData.email && loginData.password != userData.password) {
             console.log("wrong password!");
-            loginProblem += "Your password doesn't match.";
         } else {
             console.log("you're not even registered bro.");
-            loginProblem += "You need to register first!"
         }
     }
 
@@ -42,21 +39,32 @@ export default function Dashboard() {
         return (
             <div>
                 <NavBar />
-                <div>Welcome to your dashboard!</div>
-                {
-                    eventArray  ? <EventDisplayer /> : <button onClick={() => navAdd (`/add-event`)}>Click me!</button>
-                }
-                <div><button onClick={() => setIsLoggedIn('false')}>Logout</button></div>
+                <div className='main-areas'>
+                    <h3>Welcome to your dashboard!</h3>
+                    <br />
+                    {
+                        eventArray ? <EventDisplayer /> : <><button onClick={() => navAdd (`/add-event`)}>Add an event!</button><br /></>
+                    }
+                    <br />
+                    <p><button onClick={() => setIsLoggedIn('false')}>Logout</button></p>
+                </div>
             </div>
         )
     } else {
         return (
-            <div>
-                <NavBar />
-                <LoginArea setLoginData={setLoginData} userCheck={userCheck} userData={userData}/>
-                <span>{loginProblem}</span>
-                <div>Don't have an account yet? <RegistrationArea setUserData={setUserData}/></div>
-            </div>
+            <>
+                <div id='login-area'>
+                    <h2>Please log in to view your dashboard</h2>
+                    <br />
+                    <LoginArea setLoginData={setLoginData} userCheck={userCheck} userData={userData}/>
+                    <br />
+                    {
+                        userData === '' ? <RegistrationArea setUserData={setUserData} /> : <></>
+                    }
+                    
+                </div>
+                
+            </>
         )        
     }
 }

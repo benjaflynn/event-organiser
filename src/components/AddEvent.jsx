@@ -11,7 +11,7 @@ export default function AddEvent() {
         <div>
             <NavBar />
             {
-                newEvent === '' ? <div><div><h1>Add an event here!</h1></div><div><NewEventAdder setNewEvent={setNewEvent}/></div></div> : <div><NewEventDisplayer setNewEvent={setNewEvent} newEvent={newEvent}/></div>
+                newEvent === '' ? <div className='main-areas'><h1>Add an event here!</h1><br /><NewEventAdder setNewEvent={setNewEvent}/></div> : <NewEventDisplayer setNewEvent={setNewEvent} newEvent={newEvent}/>
             }
         </div>
     );

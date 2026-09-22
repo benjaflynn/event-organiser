@@ -67,14 +67,18 @@ function RegistrationArea({ setUserData }) {
     });
 
     return(
-        <div>
-            <div id='registerFormBox'>
-                <form id='registerForm' onSubmit={formik.handleSubmit}>
+        <>
+            <div className='main-areas'>
+
+                <h4>Don't have an account yet?</h4>
+
+                <form className='input-form' id='register-form' onSubmit={formik.handleSubmit}>
                     <label htmlFor='firstname'>First name</label>
                     <input 
                         id='firstname'
                         name='firstname'
                         type='text'
+                        placeholder='required'
                         onChange={formik.handleChange}
                         onBlur={formik.handleBlur}
                         value={formik.values.firstname}
@@ -87,6 +91,7 @@ function RegistrationArea({ setUserData }) {
                         id='lastname'
                         name='lastname'
                         type='text'
+                        placeholder='required'
                         onChange={formik.handleChange}
                         onBlur={formik.handleBlur}
                         value={formik.values.lastname}
@@ -99,6 +104,7 @@ function RegistrationArea({ setUserData }) {
                         id='username'
                         name='username'
                         type='text'
+                        placeholder='required'
                         onChange={formik.handleChange}
                         onBlur={formik.handleBlur}
                         value={formik.values.username}
@@ -111,6 +117,7 @@ function RegistrationArea({ setUserData }) {
                         id='email'
                         name='email'
                         type='email'
+                        placeholder='required'
                         onChange={formik.handleChange}
                         onBlur={formik.handleBlur}
                         value={formik.values.email}
@@ -123,6 +130,7 @@ function RegistrationArea({ setUserData }) {
                         id='password'
                         name='password'
                         type='password'
+                        placeholder='required'
                         onChange={formik.handleChange}
                         onBlur={formik.handleBlur}
                         value={formik.values.password}
@@ -135,6 +143,7 @@ function RegistrationArea({ setUserData }) {
                         id='password2'
                         name='password2'
                         type='password'
+                        placeholder='required'
                         onChange={formik.handleChange}
                         onBlur={formik.handleBlur}
                         value={formik.values.password2}
@@ -142,10 +151,10 @@ function RegistrationArea({ setUserData }) {
                     {formik.errors.password2 && formik.touched.password2 ? <div className='error'>{formik.errors.password2}</div> : null}
                     <br />
 
-                    <button type='submit'>Submit</button>
+                    <button className='submit-btn' type='submit'>Submit</button>
                 </form>
             </div>
-        </div>
+        </>
     )
 };
 

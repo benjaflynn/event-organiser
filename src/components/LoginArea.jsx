@@ -34,8 +34,9 @@ export default function LoginArea({ userData, setLoginData, userCheck }) {
     });
 
     return (
-        <form onSubmit={formik.handleSubmit}>
-            <label htmlFor='email'>Email Address</label>
+        <form onSubmit={formik.handleSubmit} className='input-form' id='login-form'>
+            <label htmlFor='email' className='login-label'>Email Address</label>
+            <br />
             <input
                 id='email'
                 name='email'
@@ -48,7 +49,8 @@ export default function LoginArea({ userData, setLoginData, userCheck }) {
 
             <br />
 
-            <label htmlFor='password'>Password</label>
+            <label htmlFor='password' className='login-label'>Password</label>
+            <br />
             <input
                 id='password'
                 name='password'
@@ -59,7 +61,7 @@ export default function LoginArea({ userData, setLoginData, userCheck }) {
             {formik.errors.password && formik.touched.password ? <div className='error'>{formik.errors.email}</div> : null}
 
             <br />
-            <button type='submit'>Submit</button>
+            <button type='submit' className='submit-btn'>Submit</button>
         </form>
     )
 }
