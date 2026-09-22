@@ -19,7 +19,7 @@ export default function NewEventDisplayer({ newEvent, setNewEvent }) {
             <br />
             <p><button onClick={() => {setNewEvent('')}}>Add another event?</button>
             <br />
-            <button onClick={() => navAdd (`/`)}>View all events!</button></p>
+            <button onClick={() => nav (`/`)}>View all events!</button></p>
         </div>
     );
 

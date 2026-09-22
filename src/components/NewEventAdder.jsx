@@ -26,6 +26,8 @@ const validate = values => {
     if (!values.location) {
         errors.location = 'Required field!'
     }
+
+    return errors;
 };
 
 export default function AddEvent({ setNewEvent }) {
@@ -44,7 +46,6 @@ export default function AddEvent({ setNewEvent }) {
         validate,
 
         onSubmit: values => {
-            console.log(JSON.stringify(values, null, 2));
             setNewEvent(values);
             setEventArray([...eventArray, values]);
         },
@@ -59,6 +60,7 @@ export default function AddEvent({ setNewEvent }) {
                         id='title'
                         name='title'
                         type='text'
+                        placeholder='required'
                         onChange={formik.handleChange}
                         onBlur={formik.handleBlur}
                         value={formik.values.title}
@@ -95,6 +97,7 @@ export default function AddEvent({ setNewEvent }) {
                         id='description'
                         name='description'
                         type='text'
+                        placeholder='required'
                         onChange={formik.handleChange}
                         onBlur={formik.handleBlur}
                         value={formik.values.description}
@@ -107,6 +110,7 @@ export default function AddEvent({ setNewEvent }) {
                         id='location'
                         name='location'
                         type='text'
+                        placeholder='required'
                         onChange={formik.handleChange}
                         onBlur={formik.handleBlur}
                         value={formik.values.location}

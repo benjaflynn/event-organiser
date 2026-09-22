@@ -1,6 +1,5 @@
 body {
   margin: 0;
-  background-color: black;
 }
 
 #root {
@@ -29,7 +28,7 @@ body {
   display: flex;
   margin: auto;
   padding: 0;
-  padding-left: 25rem;
+  padding-left: 10rem;
   font-size: 30px;
   column-gap: 30px;
 }
@@ -59,4 +58,47 @@ h2 {
 }
 p {
   margin: 0;
+}
+
+.main-areas {
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+}
+
+.login-label {
+  margin-left: -2.5em;
+}
+
+#accordion-container {
+  width: 80%;
+  margin: auto;
+  border: 2px solid rgba(39, 87, 136, 0.404);
+  border-radius: 8px;
+}
+
+.accordion-header {
+  font-size: 24px;
+}
+
+.accordion-body {
+  font-size: 18px;
+}
+
+label, input {
+  width: 150px;
+  margin: 0.5em;
+  margin-left: 0;
+  text-align: left;
+}
+
+input {
+  width: 200px;
+}
+
+.submit-btn {
+  margin-top: 1em;
+}
+
+.errors {
+  color: red;
 }
