@@ -54,7 +54,7 @@ export default function Dashboard() {
     } else {
         return (
             <>
-                <div id='login-area'>
+                <div className='main-areas'>
                     <h2>Please log in to view your dashboard</h2>
                     <br />
                     <LoginArea setLoginData={setLoginData} userCheck={userCheck} userData={userData}/>

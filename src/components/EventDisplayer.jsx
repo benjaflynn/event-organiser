@@ -9,7 +9,7 @@ export default function EventDisplayer() {
     const { eventArray, setEventArray } = useContext(EventContext);
 
     function eventEditBtn(e) {
-        let whatEdit = e.target.parentElement.parentElement.parentElement.id;
+        let whatEdit = e.target.parentElement.parentElement.parentElement.parentElement.id;
         let idGet = whatEdit + "-overlay";
         document.getElementById(idGet).style.display = "block";
     };
@@ -26,7 +26,7 @@ export default function EventDisplayer() {
     }
 
     function eventDeleter(e) {
-        let whatDelete = e.target.parentElement.parentElement.parentElement.id;
+        let whatDelete = e.target.parentElement.parentElement.parentElement.parentElement.id;
         const filteredArray = eventArray.filter(item => !whatDelete.includes(item.title));
         setEventArray(filteredArray);
     }
