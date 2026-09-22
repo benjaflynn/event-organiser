@@ -161,3 +161,21 @@ li:hover {
 .error > ul > li:hover {
   border-bottom-color: transparent;
 }
+
+#registration-help {
+  width: 80%;
+  margin: auto;
+}
+
+.registration-help-btns {
+  margin: auto;
+}
+
+#tips-list {
+  width: 80%;
+  margin: auto;
+}
+
+#tips-list > li:hover {
+  border-bottom-color: transparent;
+}
