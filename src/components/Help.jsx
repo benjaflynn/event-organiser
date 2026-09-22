@@ -13,8 +13,8 @@ export default function Help() {
                         <Accordion.Item eventKey='0'>
                             <Accordion.Header><span className='accordion-header'>How do I add an event?</span></Accordion.Header>
                             <Accordion.Body className='accordion-body'>
-                                In the navigation bar on top, click on "Add Event", then enter your event's information! Make sure to fill in every field, as they are all required!
-                                Then, click on "submit". Your event's details will be shown to you, and you can choose to add another event or view your existing events.
+                                In the navigation bar on top, click on "Add Event", then enter your event's information! Make sure to fill in every field as they are all required!
+                                Then, click on "submit". Your event's details will be shown to you and you can choose to add another event or view your existing events.
                             </Accordion.Body>
                         </Accordion.Item>
 
