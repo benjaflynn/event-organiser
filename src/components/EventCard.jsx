@@ -123,7 +123,7 @@ export default function EventCard({ date, time, title, description, location, ev
                     {formik.touched.location && formik.errors.location ? <div>{formik.errors.location}</div> : null}
                     <br />
                     
-                    <Button variant='success' className='submit-btn' type='submit' style={{ marginBottom: '10px'}}>Submit</Button>
+                    <Button variant='success'  className='submit-btn' type='submit' style={{ marginBottom: '10px'}}>Submit</Button>
                 </form>
             </div>
 
