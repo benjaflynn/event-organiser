@@ -66,7 +66,7 @@ export default function AddEvent({ setNewEvent }) {
                         onBlur={formik.handleBlur}
                         value={formik.values.title}
                     />
-                    {formik.touched.title && formik.errors.title ? <div>{formik.errors.title}</div> : null}
+                    {formik.touched.title && formik.errors.title ? <div className='error'>{formik.errors.title}</div> : null}
                     <br />
                     
                     <label htmlFor='date'>Date</label>
@@ -80,7 +80,7 @@ export default function AddEvent({ setNewEvent }) {
                         onBlur={formik.handleBlur}
                         value={formik.values.date}
                     />
-                    {formik.touched.date && formik.errors.date ? <div>{formik.errors.date}</div> : null}
+                    {formik.touched.date && formik.errors.date ? <div className='error'>{formik.errors.date}</div> : null}
                     <br />
                     
                     <label htmlFor='time'>Time</label>
@@ -92,7 +92,7 @@ export default function AddEvent({ setNewEvent }) {
                         onBlur={formik.handleBlur}
                         value={formik.values.time}
                     />
-                    {formik.touched.time && formik.errors.time ? <div>{formik.errors.time}</div> : null}
+                    {formik.touched.time && formik.errors.time ? <div className='error'>{formik.errors.time}</div> : null}
                     <br />
                     
                     <label htmlFor='description'>Description</label>
@@ -105,7 +105,7 @@ export default function AddEvent({ setNewEvent }) {
                         onBlur={formik.handleBlur}
                         value={formik.values.description}
                     />
-                    {formik.touched.description && formik.errors.description ? <div>{formik.errors.description}</div> : null}
+                    {formik.touched.description && formik.errors.description ? <div className='error'>{formik.errors.description}</div> : null}
                     <br />
                     
                     <label htmlFor='location'>Location</label>
@@ -118,7 +118,7 @@ export default function AddEvent({ setNewEvent }) {
                         onBlur={formik.handleBlur}
                         value={formik.values.location}
                     />
-                    {formik.touched.location && formik.errors.location ? <div>{formik.errors.location}</div> : null}
+                    {formik.touched.location && formik.errors.location ? <div className='error'>{formik.errors.location}</div> : null}
                     <br />
                     
                     <Button variant='success' type='submit' className='submit-btn'>Submit</Button>
