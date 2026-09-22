@@ -9,7 +9,7 @@ const validate = values => {
         errors.firstname = 'Required field!';
     } else if (values.firstname.length > 15) {
         errors.firstname = 'Must not be more than 15 characters';
-    } else if (!/^[A-Za-z]$/.test(values.firstname)) {
+    } else if (/^[A-Za-z]$/.test(values.firstname)) {
         errors.firstname = 'Must only contain letters.'
     }
 
@@ -17,7 +17,7 @@ const validate = values => {
         errors.lastname = 'Required field!';
     } else if (values.lastname.length > 20) {
         errors.lastname = 'Must not be more than 20 characters';
-    } else if (!/^[A-Za-z]$/.test(values.lastname)) {
+    } else if (/^[A-Za-z]$/.test(values.lastname)) {
         errors.lastname = 'Must only contain letters.'
     }
 
