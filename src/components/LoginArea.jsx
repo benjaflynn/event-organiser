@@ -15,6 +15,8 @@ const validate = values => {
     } else if (values.password.length < 8) {
         errors.password = 'Your password is too short!';
     }
+
+    return errors;
 }
 
 export default function LoginArea({ userData, setLoginData, userCheck }) {
@@ -28,7 +30,6 @@ export default function LoginArea({ userData, setLoginData, userCheck }) {
         validate,
 
         onSubmit: values => {
-            console.log(values);
             setLoginData(values);
             userCheck(userData, values);
         }
@@ -57,9 +58,10 @@ export default function LoginArea({ userData, setLoginData, userCheck }) {
                 name='password'
                 type='password'
                 onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
                 value={formik.values.password}
             />
-            {formik.errors.password && formik.touched.password ? <div className='error'>{formik.errors.email}</div> : null}
+            {formik.errors.password && formik.touched.password ? <div className='error'>{formik.errors.password}</div> : null}
 
             <br />
             <Button type='submit' variant='success' className='submit-btn'>Submit</Button>

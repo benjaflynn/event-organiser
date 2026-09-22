@@ -21,18 +21,9 @@ export default function Dashboard() {
 
     const { eventArray, setEventArray } = useContext(EventContext);
 
-    const loginProblem = '';
-
     function userCheck(userData, loginData) {
         if (loginData.email === userData.email && loginData.password === userData.password) {
-            window.alert('Login successful!')
             setIsLoggedIn('true');
-        } else if (loginData.email != userData.email && loginData.password === userData.password) {
-            console.log("wrong email!");
-        } else if (loginData.email === userData.email && loginData.password != userData.password) {
-            console.log("wrong password!");
-        } else {
-            console.log("you're not even registered.");
         }
     }
 

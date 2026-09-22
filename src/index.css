@@ -48,6 +48,7 @@ h1 {
     margin: 20px 0;
   }
 }
+
 h2 {
   font-size: 24px;
   line-height: 118%;
@@ -57,6 +58,7 @@ h2 {
     font-size: 20px;
   }
 }
+
 p {
   margin: 0;
 }
@@ -137,10 +139,6 @@ input {
   width: 80px;
 }
 
-.errors {
-  color: red;
-}
-
 li {
   border-bottom: 2px solid transparent;
 }
@@ -151,4 +149,12 @@ li:hover {
 
 #logout-btn {
   margin-top: 20px;
+}
+
+.error {
+  color: red;
+}
+
+.error > ul > li:hover {
+  border-bottom-color: transparent;
 }
