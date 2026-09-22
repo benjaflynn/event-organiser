@@ -33,8 +33,10 @@ const validate = values => {
 
     if (!values.password) {
         errors.password = 'Required field!';
-    } else if (!/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%#*?&])[A-Za-z\d@$!%#*?&]{8,}$/.test(values.password) ) {
-        errors.password = 'Please use at least one upper-case letter, one lower-case letter, one number, and a special character.';
+    } else if (!/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%#*?&])[A-Za-z\d@$!%#*?&]{8,}$/.test(values.password)) {
+        errors.password = <>Password needs to contain one of each:<ul style={{listStyleType: 'none'}}><li>upper-case letter</li><li>lower-case letter</li><li>number</li><li>special character</li></ul></>
+    } else if (values.password.length < 8) {
+        errors.password = <>Password needs to be at least 8 characters long</>
     }
 
     if (!values.password2) {
