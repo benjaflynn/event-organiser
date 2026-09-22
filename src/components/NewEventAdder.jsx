@@ -1,6 +1,7 @@
 import { useFormik } from 'formik';
 import { useContext } from 'react';
 import { EventContext } from '../EventContext';
+import Button from 'react-bootstrap/Button';
 
 {/**displays the form to add a new event, containing options for title, date, time, description, location, and a submit button. uses formik to validate the input. */}
 
@@ -118,7 +119,7 @@ export default function AddEvent({ setNewEvent }) {
                     {formik.touched.location && formik.errors.location ? <div>{formik.errors.location}</div> : null}
                     <br />
                     
-                    <button type='submit'>Submit</button>
+                    <Button variant='success' type='submit' className='submit-btn'>Submit</Button>
                 </form>
             </div>
         </div>

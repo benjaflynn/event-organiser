@@ -90,6 +90,19 @@ p {
   justify-content: space-around;
 }
 
+#new-event-display {
+  padding-top: 5rem;
+  width: 50%;
+  margin: auto;
+}
+
+table {
+  text-align: left;
+  width: 50%;
+  margin: 3rem auto auto auto;
+  font-size: 18px;
+}
+
 #accordion-container {
   width: 80%;
   margin: auto;
@@ -134,4 +147,8 @@ li {
 
 li:hover {
   border-bottom-color: black;
+}
+
+#logout-btn {
+  margin-top: 20px;
 }

@@ -1,4 +1,3 @@
-{/**this needs a dropdown sort menu i think. */}
 import { useContext } from 'react';
 import { EventContext } from '../EventContext';
 import EventCard from './EventCard';

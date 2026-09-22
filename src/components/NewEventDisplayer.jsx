@@ -1,25 +1,47 @@
 import { useNavigate } from "react-router-dom";
+import Button from 'react-bootstrap/Button';
 
 export default function NewEventDisplayer({ newEvent, setNewEvent }) {
 
     const nav = useNavigate();
+    
+    const d = new Date(newEvent.date);
+    const eventDate = d.toDateString();
 
     return (
-        <div>
+        <div id='new-event-display'>
             <h3>Your new event, {newEvent.title}, has been saved!</h3>
-            <div>
-                <ul>
-                    <li>Date: {newEvent.date}</li>
-                    <li>Time: {newEvent.time}</li>
-                    <li>Location: {newEvent.location}</li>
-                    <br />
-                    <li>Description: {newEvent.description}</li>
-                </ul>
-            </div>
+
+            <table>
+                <tbody>
+                    <tr>
+                        <th>Date:</th>
+                        <td>{eventDate}</td>
+                    </tr>
+                    <tr>
+                        <th>Time:</th>
+                        <td>{newEvent.time}</td>
+                    </tr>
+                    <tr>
+                        <th>Location:</th>
+                        <td>{newEvent.location}</td>
+                    </tr>
+                    <tr>
+                        <th>Description:</th>
+                        <td>{newEvent.description}</td>
+                    </tr>
+                </tbody>
+            </table>
             <br />
-            <p><button onClick={() => {setNewEvent('')}}>Add another event?</button>
-            <br />
-            <button onClick={() => nav (`/`)}>View all events!</button></p>
+            <p>
+                <Button className='submit-btn' onClick={() => {setNewEvent('')}}>
+                    Add another event?
+                </Button>
+                <br />
+                <Button className='submit-btn' onClick={() => nav (`/`)}>
+                    View all events
+                </Button>
+                </p>
         </div>
     );
 

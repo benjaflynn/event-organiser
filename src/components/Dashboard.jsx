@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import EventDisplayer from './EventDisplayer.jsx';
 import { EventContext } from '../EventContext';
 import RegistrationArea from './RegistrationArea.jsx';
+import Button from 'react-bootstrap/Button';
 
 
 export default function Dashboard() {
@@ -31,7 +32,7 @@ export default function Dashboard() {
         } else if (loginData.email === userData.email && loginData.password != userData.password) {
             console.log("wrong password!");
         } else {
-            console.log("you're not even registered bro.");
+            console.log("you're not even registered.");
         }
     }
 
@@ -43,10 +44,10 @@ export default function Dashboard() {
                     <h3>Welcome to your dashboard!</h3>
                     <br />
                     {
-                        eventArray ? <EventDisplayer /> : <><button onClick={() => navAdd (`/add-event`)}>Add an event!</button><br /></>
+                        eventArray ? <EventDisplayer /> : <><span><h4>No events yet...</h4></span><br/><Button variant='success' onClick={() => navAdd (`/add-event`)}><h5>Add an event?</h5></Button><br /></>
                     }
                     <br />
-                    <p><button onClick={() => setIsLoggedIn('false')}>Logout</button></p>
+                    <p><Button id='logout-btn' variant='danger' onClick={() => setIsLoggedIn('false')}>Logout</Button></p>
                 </div>
             </div>
         )

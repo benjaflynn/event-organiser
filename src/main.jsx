@@ -38,5 +38,5 @@ createRoot(document.getElementById('root')).render(
         <RouterProvider router={router} />
       </EventProvider>
     </LoginProvider>
-  </StrictMode>,
+  </StrictMode>
 )

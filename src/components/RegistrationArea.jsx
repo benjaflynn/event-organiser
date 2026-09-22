@@ -1,4 +1,5 @@
 import { useFormik } from 'formik';
+import Button from 'react-bootstrap/Button';
 
 const validate = values => {
 
@@ -151,7 +152,7 @@ function RegistrationArea({ setUserData }) {
                     {formik.errors.password2 && formik.touched.password2 ? <div className='error'>{formik.errors.password2}</div> : null}
                     <br />
 
-                    <button className='submit-btn' type='submit'>Submit</button>
+                    <Button className='submit-btn' variant='success' type='submit'>Submit</Button>
                 </form>
             </div>
         </>
