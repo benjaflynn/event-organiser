@@ -64,6 +64,7 @@ export default function EventCard({ date, time, title, description, location, ev
             </Card.Body>
 
             <div style={{display: "none"}} id={idMaker}>
+                <hr />
                 <form onSubmit={formik.handleSubmit}>
                     <label htmlFor='text'>Title</label>
                     <input
@@ -122,7 +123,7 @@ export default function EventCard({ date, time, title, description, location, ev
                     {formik.touched.location && formik.errors.location ? <div>{formik.errors.location}</div> : null}
                     <br />
                     
-                    <button type='submit'>Submit</button>
+                    <Button variant='success' className='submit-btn' type='submit' style={{ marginBottom: '10px'}}>Submit</Button>
                 </form>
             </div>
 
