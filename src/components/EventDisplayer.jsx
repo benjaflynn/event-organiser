@@ -15,12 +15,6 @@ export default function EventDisplayer() {
 
     const { eventArray, setEventArray } = useContext(EventContext);
 
-    function eventEditBtn(e) {
-        let whatEdit = e.target.parentElement.parentElement.parentElement.parentElement.id;
-        let idGet = whatEdit + "-overlay";
-        document.getElementById(idGet).style.display = "block";
-    }
-
     function eventEditor(values, title) {
         const newEvents = eventArray.map(item => {
             if (item.title === title) {
@@ -33,11 +27,11 @@ export default function EventDisplayer() {
     }
 
     function eventDeleter(e) {
-        let whatDelete = e.target.parentElement.parentElement.parentElement.parentElement.id;
+        let whatDelete = e.target.id.split('-', 1);
         let text = "Are you sure you want to delete this event?";
         if (confirm(text) === true) {
             const filteredArray = eventArray.filter(item => !whatDelete.includes(item.title));
-        setEventArray(filteredArray);
+            setEventArray(filteredArray);
         }
     }
 
@@ -48,7 +42,7 @@ export default function EventDisplayer() {
             <Col>
             {eventArray.map(event => {
                 return <Row key={event.title} id={event.title} className='event-card-row'>
-                    <EventCard title={event.title} date={event.date} time={event.time} description={event.description} location={event.location} eventEditBtn={eventEditBtn} eventEditor={eventEditor} eventDeleter={eventDeleter} />
+                    <EventCard title={event.title} date={event.date} time={event.time} description={event.description} location={event.location} eventEditBtn={eventEditBtn} eventDeleter={eventDeleter} />
                     </Row>})}
             </Col>
         </Container>
